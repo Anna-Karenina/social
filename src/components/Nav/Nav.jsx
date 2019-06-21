@@ -1,21 +1,23 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 import cl from './Nav.module.css';
 
 
 const Nav = () =>{
   return (
-    <div className={cl.forStiky}>
-      <div className={cl.logo}></div>
+    <div className={cl.container}>
     <nav className={cl.nav}>
       <div className={cl.menulist}>
-      <button> <a href="#s">Поиск</a> </button>
+      <NavLink to="#s" activeClassName = {cl.active} ><button>Поиск</button></NavLink>
       <br></br><hr></hr>
-      <button> <a href="#s">Стена</a> </button>
-      <button> <a href="#s">Сообщения</a> </button>
-      <button> <a href="#s">Новости</a> </button>
-      <button> <a href="#s">Музыка</a> </button>
+
+       <NavLink to="/User" activeClassName = {cl.active} ><button>Стена</button></NavLink>
+
+      <NavLink to="/Dialogs" activeClassName = {cl.active} ><button>Сообщения </button></NavLink>
+      <NavLink to="/News" activeClassName = {cl.active} ><button> Новости </button></NavLink>
+      <NavLink to="/Music"activeClassName = {cl.active} ><button> Музыка</button></NavLink>
       <br></br><hr></hr>
-      <button> <a href="#s">Пользователь</a> </button>
+      <NavLink to="/Settings"activeClassName = {cl.active} ><button>Пользователь </button></NavLink>
       </div>
     </nav>
   </div>

@@ -1,23 +1,18 @@
 
-.forStiky{
-  height: 1400px;
+.container{
+  background: url(../../img/nav1.png) center center  no-repeat;
+  background-size: 100%;
+  grid-area: n;
+
 }
 .nav{
   position: sticky;
-  grid-area: n;
-  background-color: #fff;
   padding-top: 2vw;
-  height: 75vh;
-  background: url(../../img/forest-green-light-nature-Favim.com-2488576.png)  no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+  height:100vh;
+  width: 100%;
+
 }
 .logo{
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 15vh;
-  background-color: #73A9D3;
 }
 .menulist{
   display: flex;
@@ -47,4 +42,9 @@ a{
   font-weight: 700;
   text-decoration: none;
   color: #fff;
+    transition: 0.4s;
+}
+a.active{
+  transition: 0.4s;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
 }

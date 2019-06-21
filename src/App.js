@@ -1,29 +1,36 @@
 import './App.css';
+
+import {BrowserRouter, Route} from "react-router-dom";
 import React from 'react';
 
+import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/header/Header.jsx';
+import Music from './components/Music/Music';
 import Nav from './components/Nav/Nav.jsx';
-import Post from './components/mainContent/Post/Post';
-import User from './components/User/User';
-import Wall from './components/mainContent/Wall/Wall.jsx';
+import News from './components/News/News';
+import Settings from './components/Settings/Settings';
+import User from './components/mainContent/User/User';
 
 
 
 const App = () =>{
   return (
-    <div className='appWrapper'>
-        <Header />
-        <Nav />
-        <div className = 'content'>
+  <BrowserRouter>
+      <div className='appWrapper'>
+          <Header />
+          <Nav />
+            <div className = 'content'>
+              <Route path= '/dialogs' component={Dialogs} />
+              <Route path= '/user' component={User} />
+              <Route path= '/Music' component={Music} />
+              <Route path= '/News' component={News} />
+              <Route path= '/Settings' component={Settings} />
 
-        <User />
-        <Wall />
-        <Post message='Тут будет находится текст поста, тот самый который оставил данный комментатор - чей аватар вы видите на экране' />
-        <Post message='Тут будет находится текст поста, тот самый который оставил второй комментатор - чей аватар вы видите на экране' />
-          <div className="line">
-            <img alt="" src="http://www.asrepooya.com/fa/img/underconst.png"></img>  </div>
+            <div className="line"><img alt="" src="http://www.asrepooya.com/fa/img/underconst.png"></img>  </div>
+
+      </div>
     </div>
-  </div>
+  </BrowserRouter>
   );
 }
 

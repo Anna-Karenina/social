@@ -6,18 +6,27 @@
 }
 .userAvatar {
   padding-left: 1vw;
-  width: 25vw;
-  height: 40vh;
+  width: 18vw;
+  height: 42vh;
+}
+.bnt{
+  overflow: hidden;
+  padding: 0.3vh;
+  border-radius: 1vw;
+  color: #fff;
+  background-color: #4976A8;
+  cursor: pointer;
+  margin-bottom:  1vh;
 
 }
 .userAvatar img {
   width: 100%;
-  height: 100%;
+  height:  100%;
   border-radius: 2vw;
 }
 
  .userInfo{
-  vertical-align: center;
+  width: 34vw;
   margin-left: 2vw;
   line-height: 1.6vw;
 }

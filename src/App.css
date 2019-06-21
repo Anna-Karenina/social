@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  outline: none;  
+  outline: none;
   }
 
 body{
@@ -16,7 +16,7 @@ body{
   "h h"
   "n c";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr
+  grid-template-columns: 2fr 10fr;
 
 }
 .content{
@@ -30,6 +30,7 @@ body{
 }
 
 .line{
+  display: none;
   position: absolute;
       top: 200px;
       left: 1px;
