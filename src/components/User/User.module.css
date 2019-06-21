@@ -1,0 +1,27 @@
+.userProfile{
+  margin: 5vh 0 5vh 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.userAvatar {
+  padding-left: 1vw;
+  width: 25vw;
+  height: 40vh;
+
+}
+.userAvatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2vw;
+}
+
+ .userInfo{
+  vertical-align: center;
+  margin-left: 2vw;
+  line-height: 1.6vw;
+}
+ .userInfo h3 {
+   font-size: 1.50vw;
+   padding-bottom: 1vh;
+ }
