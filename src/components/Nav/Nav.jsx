@@ -16,8 +16,9 @@ const Nav = () =>{
       <NavLink to="/Dialogs" activeClassName = {cl.active} ><button>Сообщения </button></NavLink>
       <NavLink to="/News" activeClassName = {cl.active} ><button> Новости </button></NavLink>
       <NavLink to="/Music"activeClassName = {cl.active} ><button> Музыка</button></NavLink>
+      <NavLink to="/Friends" activeClassName = {cl.active} ><button>Друзья </button></NavLink>
       <br></br><hr></hr>
-      <NavLink to="/Settings"activeClassName = {cl.active} ><button>Пользователь </button></NavLink>
+      <NavLink to="/Settings" activeClassName = {cl.active} ><button>Пользователь </button></NavLink>
       </div>
     </nav>
   </div>

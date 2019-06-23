@@ -1,16 +1,18 @@
 import React from 'react';
 
-import Wall from '..//Wall/Wall';
+import Wall from '../Wall/Wall';
 import cl from './User.module.css';
 
 
-const User = () =>{
+const User = (props) =>{
+
   return (
+
     <div>
       <div className={cl.userProfile}>
         <div className={cl.userAvatar}><img alt="" src="https://www.startfilm.ru/images/base/film/05_01_13/big_97947_5663_d037_00240.jpg" />
         <button className={cl.bnt}>написать </button>
-        </div>
+      </div>
       <div className={cl.userInfo}>
         <h3>Anna Karenina</h3>
         <p>Дата рождения</p>
@@ -25,11 +27,14 @@ const User = () =>{
         <p>FaceBook</p>
         <p>Twitter</p>
 
-        </div>
+      </div>
     </div>
-            <Wall />
-    </div>
-  );
+    <Wall postData={props.userPage.postData}
+          newPost={props.newPost}
+          updateNewPostText={props.updateNewPostText}
+          newPostText = {props.userPage.newPostText}/>
+  </div>
+);
 }
 
 export default User;

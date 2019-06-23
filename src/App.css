@@ -8,36 +8,23 @@
 body{
   background-color: #edeef0;
   font-family: tahoma, arial, helvetica, sans-serif;
-  font-size: 0.95wv;
+  font-size: 0.95vw;
 }
 .appWrapper{
   display: grid;
   grid-template-areas:
   "h h"
   "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 7.3vh 1fr;
+  grid-template-columns: 16% 84% ;
 
 }
 .content{
+  grid-area: c;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  grid-area: c;
-  width: 60vw;
   border-left: 1px solid #c2c2c2;
   border-right: 1px solid #c2c2c2;
-}
-
-.line{
-  display: none;
-  position: absolute;
-      top: 200px;
-      left: 1px;
-  transform: rotate(0.09turn);
-  width: 1000px;
-}
-.line img{
-  width: 100%;
-  opacity: 0.4;
+  width: 80%;
 }

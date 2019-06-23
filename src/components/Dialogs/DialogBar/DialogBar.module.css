@@ -1,0 +1,68 @@
+
+.contactWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 100%;
+}
+.contactListItems{
+  width: 100%;
+  height: 100vh;
+  background: url(../../../img/nav2.png) no-repeat;
+  background-size: 100%;
+  box-shadow: 6px 10px 20px 4px black;
+  overflow: scroll;
+  border: none;
+}
+.textblock{
+  height: 25%;
+}
+.active{
+  transform: scale(1.05);
+  color: #fff
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  padding: 1vw;
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+  overflow: hidden;
+  transition: 0.4s;
+}
+.item:hover {
+    transform: scale(1.05);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+.item .active{
+  transition: 0.4s;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+.ava{
+  padding: 0.2vw;
+  width: 30%;
+
+}
+.ava img{
+  width: 100%;
+  border-radius: 20%;
+}
+.aboutDialog{
+width: 70%;
+display: flex;
+flex-direction: column;
+}
+
+.author{
+  font-weight: 700;
+}
+.timeMessage{
+  font-weight: 300;
+  font-size: 0.6vw;
+  color: #afafaf;
+  padding: 0.6vw;
+}
+.lstmsg{
+  font-weight: 400;
+  font-size: 0.8vw;
+}
