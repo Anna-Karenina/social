@@ -48,3 +48,15 @@ a.active{
   transition: 0.4s;
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
+
+.settings{
+  position: absolute;
+  top: 70vh;
+  left:0;
+  width: 100%
+}
+/* mini frieds*/
+
+.miniwrap{
+  width: 100%
+}

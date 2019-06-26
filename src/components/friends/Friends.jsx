@@ -13,27 +13,22 @@ const Showfriends = (props) =>{
 }
 
 const Friends = (props) =>{ //получаем массив jsx элементов
-  let friendsElements = props.state.dialogAuthor
-    .map( author => <Showfriends id={author.id} name={author.name} time={author.time} lstmessage={author.lstmessage}  ava={author.ava} /> );
-
-return (
-<div className={cl.container}>
-  <div className={cl.wrapper}>
-    <div className={cl.title}>
-      <h3>Мои контакты</h3>
+  let friendsElements = props.state
+  .map( author => <Showfriends id={author.id} name={author.name} time={author.time} lstmessage={author.lstmessage}  ava={author.ava} /> );
+  return (
+    <div className={cl.container}>
+      <div className={cl.wrapper}>
+        <div className={cl.title}>
+          <h3>Мои контакты</h3>
+        </div>
+        <div className={cl.friendsList}>
+          {friendsElements}
+        </div>
       </div>
-    <div className={cl.friendsList}>
-    {friendsElements}
     </div>
-    </div>
-</div>
 
-);
+  );
 }
 
-
-// const QuickForNavBar{
-//
-// }
 
 export default Friends;

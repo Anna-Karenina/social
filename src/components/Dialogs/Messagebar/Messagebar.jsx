@@ -1,22 +1,10 @@
 import React from 'react';
 
 import CreateMessageBlock from '../CreateMessageBlock/CreateMessageBlock';
+import CreateMessageElement from '../CreateMessageElement/CreateMessageElement';
 import cl from './Messagebar.module.css';
 
-
-const Message = (props) => { //создание компонента сообщение отвечающего за вывод
-  return(
-    <div>
-      {props.message}
-  </div>
-  );
-}
-
 const Messagebar = (props) =>{
-
-  let messagesElements = props.dialogMessages
-    .map(m => <Message message ={m.msg} />);
-
   return(
 <div className= {cl.dialogPageWrapper}>
   <div className= {cl.findInDialog}>findInDialog<hr /></div>
@@ -38,19 +26,15 @@ const Messagebar = (props) =>{
 
   <div className= {cl.dialoglist}>
 
-    <div className= {cl.dialog + ' ' + cl.userMessage}>
-      <div className={cl.msgwrap}>{messagesElements}</div>
-    </div>
-    <div className= {cl.dialog + ' ' + cl.interlocutorMessage}>
-      <div className={cl.msgwrap}> {messagesElements} </div>
-    </div>
+      <CreateMessageElement dialogsPage = {props.dialogsPage}
+                           dispatch = {props.dispatch}/>
 
  </div>
 
- <CreateMessageBlock />
+ <CreateMessageBlock  dialogsPage = {props.dialogsPage}
+                      dispatch = {props.dispatch}/>
 
 </div>
   );
 }
-
 export default Messagebar;

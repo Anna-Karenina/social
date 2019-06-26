@@ -1,0 +1,23 @@
+.dialog {
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+  max-height: 15vh;
+  border: 1px solid #333;
+  width: 100%;
+}
+
+.msgwrap{
+background-color: #F4F6FB;
+font-size: 0.8vw;
+padding: 1vw;
+}
+.userMessage{
+  display: flex;
+  flex-direction: row;
+}
+
+.interlocutorMessage{
+  display: flex;
+  flex-direction: row-reverse;
+}

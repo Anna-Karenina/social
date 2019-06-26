@@ -29,10 +29,8 @@ const User = (props) =>{
 
       </div>
     </div>
-    <Wall postData={props.userPage.postData}
-          newPost={props.newPost}
-          updateNewPostText={props.updateNewPostText}
-          newPostText = {props.userPage.newPostText}/>
+    <Wall userPage={props.userPage}
+          dispatch={props.dispatch} />
   </div>
 );
 }

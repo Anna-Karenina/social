@@ -1,27 +1,30 @@
 import React from 'react';
 
-import cl from './Wall.module.css';
+import { newPostCreator, onPostUpdateCreator } from '../../../redux/userPage-reducer';
 import Post from './Post/Post';
-
+import cl from './Wall.module.css';
 
 
 const Wall = (props) =>{
-
-  let posted = props.postData
-  .map(p => <Post id={p.id} name={p.name} ava={p.ava} like={p.like} repost={p.repost} message={p.message} />);
+debugger;
+  let posted = props.userPage.postData
+  .map(p => <Post id={p.id}
+                  name={p.name}
+                  ava={p.ava} like={p.like}
+                  repost={p.repost}
+                  message={p.message} />);
 
   let newPostElement = React.createRef(); //созаем новую ссылку
 
   let addPost = () =>{
-      props.newPost();
-
+    props.dispatch(newPostCreator());
   }
 
   let onPostUpdate = () => {
-    let text= newPostElement.current.value
-    props.updateNewPostText(text)
+    let text = newPostElement.current.value
+    let action = onPostUpdateCreator(text);
+    props.dispatch(action);
   }
-
   return (
     <div className={cl.container} >
 
@@ -31,11 +34,13 @@ const Wall = (props) =>{
                     placeholder="Опубликовать новость..."
                     ref = {newPostElement}
                     onChange= {onPostUpdate}
-                    value={props.newPostText}
-                     />
+                    value={props.userPage.newPostText}
+          />
         <button onClick={ addPost }>Опубликовать</button>
       </div>
-      {posted}   
+      <div className={cl.wallPost}>
+      {posted}
+    </div>
     </div>
   );
 }

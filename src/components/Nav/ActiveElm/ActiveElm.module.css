@@ -1,0 +1,23 @@
+.wrap{
+  padding-top: 1vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgba(152, 113, 66, 0.4);
+}
+.oneCard{
+  text-align: center;
+  width: 33%;
+  padding: 1vw;
+  font-weight: 300;
+  font-size: 0.85vw;
+}
+.imgWr {
+  width: 100%
+}
+.imgWr img {
+  border-radius: 2vw;
+  width: 100%;
+}

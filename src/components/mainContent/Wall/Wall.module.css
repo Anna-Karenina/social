@@ -31,3 +31,9 @@
   background-color: #4976A8;
   cursor: pointer;
 }
+
+.wallPost{
+  width: 100%;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
