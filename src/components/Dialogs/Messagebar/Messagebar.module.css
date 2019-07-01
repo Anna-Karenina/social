@@ -5,12 +5,7 @@
   flex-direction: column;
   height: 100vh
 }
-.dialoglist{
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
+
 
 
 .findInDialog{
@@ -46,4 +41,16 @@
 .imgWr img{
   border-radius: 2vh;
   width: 100%;
+}
+
+.dialoglist{
+  padding-top: 3vh;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.overflow{
+
+  overflow: scroll;
 }

@@ -10,11 +10,12 @@
 }
 .sendMessage{
   margin: 0.5vh 2vw 0 2vw;
-  padding: 0.5vh 1vw;
+  padding: 0.8vh 1vw;
   border: none;
   font-size: 1.1vw;
   font-weight: 300;
   font-style: italic;
+  box-shadow: 0px 5px 16px 0px black;
 }
 .btnwr{
 display: flex;
@@ -28,4 +29,5 @@ padding-right: 1vw;
   padding: 0;
   background-color: #4976A8;
   font-size: 0.7vw;
+  margin-top: 1vh;
 }

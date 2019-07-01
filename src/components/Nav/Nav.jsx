@@ -1,6 +1,7 @@
 import {NavLink} from "react-router-dom";
 import React from 'react';
-import ActiveElm from './ActiveElm/ActiveElm'
+
+import ActiveElmContainer from './ActiveElm/ActiveElmContainer';
 import cl from './Nav.module.css';
 
 
@@ -10,7 +11,7 @@ const Nav = (props) =>{
     <nav className={cl.nav}>
       <div className={cl.menulist}>
       <NavLink to="#s" activeClassName = {cl.active} ><button>Поиск</button></NavLink>
-      <br></br><hr></hr>
+      <hr/>
 
        <NavLink to="/User" activeClassName = {cl.active} ><button>Стена</button></NavLink>
 
@@ -20,10 +21,10 @@ const Nav = (props) =>{
       <NavLink to="/Friends"
                             activeClassName = {cl.active} >
                             <button>Друзья </button>
-                            <ActiveElm state={props}/>
+                            <ActiveElmContainer/>
 
                             </NavLink>
-      <NavLink to="/Settings" className={cl.settings} activeClassName = {cl.active} ><button>Пользователь </button></NavLink>
+      <NavLink to="/Settings" className={cl.settings} activeClassName = {cl.active} ><hr/><button>Пользователь </button></NavLink>
       </div>
     </nav>
   </div>

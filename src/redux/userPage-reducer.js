@@ -20,20 +20,22 @@ const userPageReducer = (state = initialState, action) =>{
                   repost: 0,
                   message: state.newPostText
     };
-      state.postData.push(newbp);
-      state.newPostText = '';
-      return state;
+            return {
+                    ...state,
+                    postData : [...state.postData, newbp],
+                    newPostText : ''
+                    };
     case  UPDATE_NEW_POST_TEXT :
-      state.newPostText = action.newText;
-      return state;
+    return  {
+              ...state,
+              newPostText : action.newText
+    };
     default :
        return state;
     }
-
-}
+  }
 export const newPostCreator = () =>({ type: NEW_POST })
 export const onPostUpdateCreator = (text) =>
   ({ type : UPDATE_NEW_POST_TEXT, newText : text })
-
 
 export default userPageReducer;

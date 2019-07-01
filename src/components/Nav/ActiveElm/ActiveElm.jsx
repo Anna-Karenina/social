@@ -12,9 +12,7 @@ const LlFriend = (props) =>{
 }
 
 const ActiveElm = (props)  =>{
-
-  let friendsElements = props.state.state.dialogsPage.dialogAuthor
-  .map( autho => <LlFriend id={autho.id} name={autho.name} time={autho.time} lstmessage={autho.lstmessage}  ava={autho.ava} /> );
+  let friendsElements = props.dialogAuthor.map( autho => <LlFriend id={autho.id} key = {autho.id} name={autho.name} time={autho.time} lstmessage={autho.lstmessage}  ava={autho.ava} /> );
 
 return(
   <div className = {cl.wrap}>

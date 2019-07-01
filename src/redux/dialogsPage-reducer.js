@@ -13,26 +13,27 @@ let initialState = {
     {id: 2, msg:'Yes?!' },
     {id: 3, msg:'And where they?!'}
   ],
-  newMessageBody: " "
+  newMessageBody: ''
 }
 
 const dialogsPageReducer = (state = initialState, action) => {
     switch(action.type){
       case  UPDATE_NEW_MESSAGE_BODY :
-        state.newMessageBody = action.body;
-        return state;
+        return {
+                  ...state,
+                  newMessageBody : action.body
+        };
       case SEND_MESSAGE :
         let body = state.newMessageBody;
-          state.newMessageBody = '';
-          state.dialogMessages.push({id: 4, msg: body });
-          return state;
+        return {
+          ...state,
+                    newMessageBody: '',
+                    dialogMessages : [...state.dialogMessages, {id: 4, msg: body }]
+        };
        default :
                 return state;
   }
 }
-
-
-
 export const sendMessageCreator = () =>({ type: SEND_MESSAGE })
 export const updateNewMessegeBodyCreator = (body) =>
   ({ type : UPDATE_NEW_MESSAGE_BODY, body : body })

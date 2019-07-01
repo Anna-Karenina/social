@@ -23,7 +23,7 @@ const DialogItem = (props) =>{ //создание шаблона вывода с
 const DialogBar = (props) =>{
 
   let dialogsElements = props.dialogAuthor
-    .map( author => <DialogItem id={author.id} name={author.name} time={author.time} lstmessage={author.lstmessage}  ava={author.ava} /> );
+    .map( author => <DialogItem id={author.id} key={author.id} name={author.name} time={author.time} lstmessage={author.lstmessage}  ava={author.ava} /> );
       //Создание нового массива(на основании старого) компонентов списка вывода в окне выбора собеседника через метод массива .map
   return(
      <div className= {cl.contactWrapper}>
