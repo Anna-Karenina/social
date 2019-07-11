@@ -1,17 +1,16 @@
-import React from 'react';
 import {NavLink} from "react-router-dom";
+import React from 'react';
 import cl from './Friend.module.css';
 import userPhoto from '../../../img/noavatar.png'
 
-let Friend = (props) =>{
-
+let Friend = (props) => {
+  debugger; 
   let pageCount = Math.ceil (props.totalFriednsCount / props.pageSize);
   let pages = [];
     for (let i = 1; i <= pageCount; i++){
       pages.push(i);
     }
   return <div>
-
     <div className={cl.pageblock}>
         { pages.map( p => {
           return <span className = {props.currentPage === p && cl.selected } onClick = { (e) => {props.onPageChanged(p); } }> {p} </span>
@@ -34,16 +33,19 @@ let Friend = (props) =>{
 
         <div>
         {a.followed
-          ? <button className={cl.subscribe} onClick={() => {
-            props.unfollow(a.id)}}>Unfollow</button>
-          : <button className={cl.subscribe} onClick={() => {
-            props.follow(a.id)}}>Follow</button>}
+            ? <button disabled={props.followingInProgress.some(id => id === a.id)} className={cl.subscribe}
+            onClick={() => { props.unfollow(a.id) }}
+            >Unfollow</button>
+
+        : <button disabled={props.followingInProgress.some(id => id === a.id)} className={cl.subscribe}
+             onClick={() => { props.follow(a.id) }}
+              >Follow</button>
+        }
           </div>
+
           </div>)
         }
         </div>
   }
-
-
 
 export default Friend;

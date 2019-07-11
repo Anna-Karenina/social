@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 
 import {
-  onPostUpdateCreator,
   newPostCreator,
+  onPostUpdateCreator,
 } from '../../../redux/userPage-reducer';
 import Wall from './Wall';
+
+
 
 const mapStateToProps = (state) =>{
   return{

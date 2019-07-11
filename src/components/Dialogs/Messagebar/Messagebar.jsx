@@ -6,7 +6,7 @@ import CreateMessageElementContainer from
   './CreateMessageElement/CreateMessageElementContainer';
 import cl from './Messagebar.module.css';
 
-const Messagebar = (props) =>{
+const Messagebar = (props) =>{ 
   return(
     <div className= {cl.dialogPageWrapper}>
 

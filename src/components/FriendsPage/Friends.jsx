@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FriendsContainer from './Friend/FriendsContainer';
+import FriendsContainer from './FriendsContainer';
 import cl from './Friends.module.css';
 
 

@@ -18,7 +18,7 @@ ReactDOM.render(
   </BrowserRouter>,  document.getElementById('root'));
 
 
-
+ window.store = store 
 
 
 serviceWorker.unregister();

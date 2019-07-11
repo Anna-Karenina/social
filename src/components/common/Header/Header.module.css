@@ -4,8 +4,18 @@
   border-bottom-left-radius: 2vh;
   border-bottom-right-radius: 2vh;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3vw;
+  align-items: center;
+  position: sticky;
 }
 .header img {
   width: 12vw;
   height: auto;
+}
+
+.loginBlock{
+  color: #fff;
+  font-size: 1.4vw;
 }
