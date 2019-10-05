@@ -1,88 +1,30 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  }
+
 body{
   background-color: #edeef0;
+  font-family: tahoma, arial, helvetica, sans-serif;
+  font-size: 0.95vw;
 }
 .appWrapper{
   display: grid;
   grid-template-areas:
   "h h"
   "n c";
-  grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr
+  grid-template-rows: 7.3vh 1fr;
+  grid-template-columns: 16% 84% ;
 
-}
-
-.header{
-  grid-area: h;
-  background-color: #4a76a8;
-  border-bottom-left-radius: 2vh;
-  border-bottom-right-radius: 2vh;
-}
-.header img {
-  width: 12vw;
-  height: auto;
-}
-
-.nav{
-  grid-area: n;
-  background-color: #fff;
-  padding-top: 2vw;
-
-}
-.nav div {
-  margin-left: 2vw;
-  padding-top: 2vh;
-}
-.nav div a{
-  text-decoration: none;
 }
 .content{
+  grid-area: c;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  grid-area: c;
-  justify-content: center;
-  align-items: center;
-  width: 60vw;
-  border-left: 1px solid #c2c2c2
-
-}
-.content .userProfile{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.content .userProfile .userAvatar {
-  width: 140px;
-  height: auto;
-
-}
-.content .userProfile .userAvatar img {
-  width: 100%;
-  height: 100%;
-  border-radius: 2vw;
-}
-
-.content .userProfile .userInfo{
-  margin-left: 2vw;
-  line-height: 0.6vw;
-
-}
-.content .wall{
-  width: inherit;
-  display: flex;
-  flex-direction: column;
-}
-.content .wall h4{
-  float: left;
-  margin-left: 8vw;
-}
-.content .wall input{
-  font-size: 1.25vw;
-  background-color: #c2c2c2;
-  margin: 0 20vh;
-  padding: 4vh;
-}
-.content .wall button{
-  width: 20vh;
-  margin: 3vh 80%;
+  border-left: 1px solid #c2c2c2;
+  border-right: 1px solid #c2c2c2;
+  width: 80%;
 }

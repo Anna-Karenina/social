@@ -1,0 +1,62 @@
+
+.container{
+  grid-area: n;
+
+}
+.nav{
+  top: 0;
+  position: sticky;
+  background: url(../../../img/nav1.png) no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  width: 100%;
+
+}
+.logo{
+}
+.menulist{
+  display: flex;
+  flex-direction: column;
+}
+button{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0.6em 1.6em;
+  font-size: 1.2vw;
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+  width: 100%;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  line-height: 32px;
+  text-transform: uppercase;
+  transition: 0.4s;
+
+}
+button:hover {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+a{
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+    transition: 0.4s;
+}
+a.active{
+  transition: 0.4s;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.settings{
+  position: absolute;
+  top: 70vh;
+  left:0;
+  width: 100%
+}
+/* mini frieds*/
+
+.miniwrap{
+  width: 100%
+}

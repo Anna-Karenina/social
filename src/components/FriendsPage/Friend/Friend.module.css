@@ -1,0 +1,53 @@
+.oneCard{
+  margin-top: 2vh;
+  padding: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  min-height: 8%;
+  border: 1px solid black;
+  width: 100%
+}
+.imgWr{
+  width: 15vh;
+}
+.imgWr img {
+  width: 100%
+}
+.userData{
+  display: flex;
+}
+.userName{
+  font-size: 1.4vw;
+}
+.userStatus{
+  font-style: italic;
+  font-weight: 300;
+}
+.datawr{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #333;
+}
+.subscribe{
+    max-width: 8vw;
+    min-width: 8vw;
+    overflow: hidden;
+    padding: 0.5vh;
+    border-radius: 1vw;
+    color: #fff;
+    background-color: #4976A8;
+    cursor: pointer;
+}
+.subscribe:disabled {
+   background-color: red;
+}
+.pageblock span:hover{
+  cursor: pointer;
+}
+.selected{
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -1,0 +1,56 @@
+.dialogPageWrapper{
+  width: 70%;
+  margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh
+}
+
+
+
+.findInDialog{
+  height: 4%;
+}
+
+.interlocutors{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 6vh;
+  height: 6%;
+  width: 100%;
+}
+.interlocutorsWrap{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+.userWrap{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.imgWr{
+  width: 3vw;
+}
+.imgWr img{
+  border-radius: 2vh;
+  width: 100%;
+}
+
+.dialoglist{
+  padding-top: 3vh;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.overflow{
+
+  overflow: scroll;
+}

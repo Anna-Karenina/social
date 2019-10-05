@@ -1,0 +1,14 @@
+.preloader{
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  width: 20vw;
+  z-index: 20;
+}
+
+.preloader img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}
