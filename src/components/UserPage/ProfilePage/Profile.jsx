@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Preloader from '../../common/preloader/Preloader';
+import { ProfileStatus } from './ProfileStatus';
 import cl from './Profile.module.css';
 
 
@@ -8,7 +9,6 @@ const Profile = (props) =>{
  if (!props.user){
    return <Preloader />
  }
-
   return (
     <div className={cl.userProfile}>
       <div className={cl.userAvatar}><img alt="" src={props.user.photos.large} />
@@ -17,6 +17,9 @@ const Profile = (props) =>{
     <div className={cl.userInfo}>
       <div>
       <h3>{props.user.fullName}</h3>
+      <div className = {cl.status}> 
+        <ProfileStatus  status = {props.status} updateStatus = {props.updateStatus}/> 
+      </div>
       <p>Дата рождения:<span></span> </p>
       <p>Родной город:</p>
       <p>Текущее местоположение:</p>

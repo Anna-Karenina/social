@@ -1,8 +1,9 @@
-import { UserAPI } from '../api/api';
+import { profileApi } from '../api/api';
 
-const NEW_POST = 'NEW-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const NEW_POST = 'NEW_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_STATUS = 'SET_STATUS';
 
 let initialState = {
   postData : [
@@ -10,44 +11,62 @@ let initialState = {
     {id:2, name:'Груздная Алксандра', ava: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/FD27/production/_101970846_aubreyblanche.jpg', like: 10, repost: 3, message: 'Шла Саша по шоссе и сосала ... сушку'},
   ],
   newPostText: '',
-  user: null
+  user: null,
+  status: ""
 };
 
 const userPageReducer = (state = initialState, action) =>{
   switch(action.type){
+
     case NEW_POST :
       let newbp = {
-                  id:3 ,
-                  name: 'sm',
-                  ava: 'none',
-                  like: 0,
-                  repost: 0,
-                  message: state.newPostText
+       id:3 ,
+       name: 'sm',
+       ava: 'none',
+       like: 0,
+       repost: 0,
+       message: action.WallForm
     };
-            return {
-                    ...state,
-                    postData : [...state.postData, newbp],
-                    newPostText : ''
-                    };
-    case  UPDATE_NEW_POST_TEXT :
-    return  {
-              ...state,
-              newPostText : action.newText
-    };
+    return {
+        ...state,
+        postData : [...state.postData, newbp],
+        newPostText : ''
+    
+      };
     case  SET_USER_PROFILE : {
-    return  {...state, user : action.user}
+      return  {...state, user : action.user}
+  }
+    case  SET_STATUS : {
+      return  {...state, status : action.status}
   }
     default :
        return state;
     }
   }
-export const newPostCreator = () =>({ type: NEW_POST })
+export const newPostCreator = (WallForm) =>({ type: NEW_POST, WallForm })
 const  setUserProfile = (user) => ({ type : SET_USER_PROFILE, user })
+const  setStatusCreator = (status) => ({ type : SET_STATUS, status })
 export const onPostUpdateCreator = (text) =>
   ({ type : UPDATE_NEW_POST_TEXT, newText : text })
+
+
 export const getUserProfile = (userId) => (dispatch) =>{
-  UserAPI.getPropfile(userId).then(response =>{
-                    dispatch(setUserProfile(response.data));
+  profileApi.getPropfile(userId)
+    .then(response =>{
+     dispatch(setUserProfile(response.data));
+  });
+}
+export const getStatus = (userId) => (dispatch) =>{
+  profileApi.getStatus(userId).then(response =>{
+                    dispatch(setStatusCreator(response.data));
+  });
+}
+export const updateStatus = (status) => (dispatch) =>{
+  profileApi.updateStatus(status)
+  .then(response =>{
+   if(response.data.resultCode ===0){
+     dispatch(setStatusCreator(status));
+   }
   });
 }
 

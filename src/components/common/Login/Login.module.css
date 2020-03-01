@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+    height: 100%;
+    background: url(../../../img/bglogind.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+.container:before{
+  background-color: rgba(233, 185, 119, 1);
+  z-index: 10;
+}
+.loginform{
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 30%;
+  background-color: rgba(233, 185, 119, .3);
+  justify-content: space-around;
+}
+.loginform input{
+  padding: 0.6vw;
+  margin: 0 1vw;
+  font-size: 1vw;
+}

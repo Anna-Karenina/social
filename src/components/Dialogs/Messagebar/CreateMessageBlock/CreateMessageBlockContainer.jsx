@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 
 import {
   sendMessageCreator,
-  updateNewMessegeBodyCreator,
 } from '../../../../redux/dialogsPage-reducer';
 import CreateMessageBlock from './CreateMessageBlock';
 
@@ -14,12 +13,9 @@ let mapStateToProps = (state) => {
   }
 }
 let mapDispatchToprops = (dispatch) => {
-  return{
-    updateNewMessageBody : (body) => {
-      dispatch(updateNewMessegeBodyCreator(body));
-    },
-    sendMessage: () => {
-      dispatch(sendMessageCreator());
+    return{
+    sendMessage: (newMessageBody) => {
+      dispatch(sendMessageCreator(newMessageBody));
     }
   }
 }

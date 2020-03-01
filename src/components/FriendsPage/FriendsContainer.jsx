@@ -3,7 +3,6 @@ import React from 'react';
 import { compose } from 'redux';
 import {  follow, unfollow, getFriendsThunkC, setCurentPage,  toggleFollowingProgress }
  from '../../redux/friendsPage-reducer';
-import { withAuthRedirect } from '../../HOC/withAuthRedirect';
 import Friend from './Friend/Friend';
 import Preloader from '../common/preloader/Preloader';
 
@@ -42,6 +41,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-  withAuthRedirect,
   connect (mapStateToProps,{follow, unfollow, setCurentPage, toggleFollowingProgress, getFriendsThunkC })
 )(FriendsContainer)

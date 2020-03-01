@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route} from "react-router-dom";
+import { Route, withRouter} from "react-router-dom";
 import React from 'react';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Friends from './components/FriendsPage/Friends';
@@ -10,15 +10,29 @@ import Nav from './components/common/Nav/Nav';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import UserContainer from './components/UserPage/UserContainer';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import {initializeApp} from './redux/app-reducer'
+import Preloader from './components/common/preloader/Preloader';
 
 
 
-const App = (props) =>{
-  return (
-    <BrowserRouter>
+class App extends React.Component {
+  componentDidMount() {
+    console.log(this)
+  this.props.initializeApp();
+}
+
+render() {
+    if (!this.props.initialized) {
+      
+        return <Preloader />
+        
+    }
+    return(
       <div className='appWrapper'>
         <HeaderContainer />
-        <Nav state={props.state}/>
+        <Nav state={this.props.state}/>
           <div className = 'content'>
             <Route path= '/Dialogs' render={ () => <DialogsContainer /> } />
             <Route path= '/User/:userId?'render= { () =>  <UserContainer/> } />
@@ -29,7 +43,14 @@ const App = (props) =>{
               <Route path= '/Friends' render={ () => <Friends />} />
               </div>
       </div>
-  </BrowserRouter>);
+  );
+ }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, {initializeApp}))(App);  

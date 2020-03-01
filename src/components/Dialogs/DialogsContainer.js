@@ -3,10 +3,8 @@ import React from 'react';
 import { withAuthRedirect } from '../../HOC/withAuthRedirect';
 import Dialogs from './Dialogs.jsx';
 
-const DialogsContainer = (props) =>{  debugger
+const DialogsContainer = (props) =>{  
   return <Dialogs  />
 }
-compose(withAuthRedirect)(DialogsContainer)
 
-
-export default DialogsContainer
+export default compose(withAuthRedirect)(DialogsContainer)

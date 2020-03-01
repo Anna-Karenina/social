@@ -20,10 +20,9 @@ const mapDispatchToprops = (dispatch) =>{
         let action = onPostUpdateCreator(text);
         dispatch(action);
     },
-    addPost: () => {
-      dispatch(newPostCreator());
+    addPost: (aWallForm) => {
+      dispatch(newPostCreator(aWallForm));
     }
   }
 }
-const WallContainer = connect (mapStateToProps, mapDispatchToprops)(Wall);
-export default WallContainer;
+export default connect (mapStateToProps, mapDispatchToprops)(Wall);

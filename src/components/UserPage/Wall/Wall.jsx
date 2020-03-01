@@ -1,46 +1,36 @@
 import React from 'react';
 
 import Post from './Post/Post';
+import WallForm from './WallForm';
 import cl from './Wall.module.css';
 
 
-const Wall = (props) =>{
-
+const Wall = React.memo( props =>{
   let posted = props.postData
-  .map(p => <Post id={p.id}
-                  key={p.id}
-                  name={p.name}
-                  ava={p.ava} like={p.like}
-                  repost={p.repost}
-                  message={p.message} />);
-  let newPostElement = React.createRef(); //созаем новую ссылку
+  .map(p => 
+    <Post 
+      id={p.id}
+      key={p.id}
+      name={p.name}
+      ava={p.ava} like={p.like}
+      repost={p.repost}
+      message={p.message} />);
 
-  let onAddPost = () =>{
-    props.addPost();
+  let onAddPost = ({addPost, values}) =>{
+    addPost(values.aWallForm);
   }
 
-  let onPostUpdate = () => {
-    let text = newPostElement.current.value
-    props.updateNewPostText(text)
-  }
   return (
     <div className={cl.container} >
-
       <div className={cl.wall}>
         <span><h4>Мои записи</h4></span>
-        <textarea  cols="1" rows="5"
-                    placeholder="Опубликовать новость..."
-                    ref = {newPostElement}
-                    onChange= {onPostUpdate}
-                    value={props.newPostText}
-          />
-        <button onClick={ onAddPost }>Опубликовать</button>
+        <WallForm onSubmit={onAddPost} />
       </div>
       <div className={cl.wallPost}>
       {posted}
     </div>
     </div>
   );
-}
+} )
 
 export default Wall;

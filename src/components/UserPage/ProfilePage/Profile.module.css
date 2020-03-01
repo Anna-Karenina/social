@@ -34,3 +34,7 @@
    font-size: 1.50vw;
    padding-bottom: 1vh;
  }
+.status{
+  font-style: italic;
+  font-weight: 600;
+}

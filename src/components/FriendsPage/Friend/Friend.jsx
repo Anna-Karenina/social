@@ -4,7 +4,6 @@ import cl from './Friend.module.css';
 import userPhoto from '../../../img/noavatar.png'
 
 let Friend = (props) => {
-  debugger; 
   let pageCount = Math.ceil (props.totalFriednsCount / props.pageSize);
   let pages = [];
     for (let i = 1; i <= pageCount; i++){
